@@ -19,7 +19,7 @@ To make the system accessible, a Streamlit-based web application is developed, o
 - Model Performance Dashboard: Displays accuracy, confusion matrices, and other metrics.
 
 ## Preview
-[![Video Preview](Video.png)](https://drive.google.com/file/d/1rVNMi8UYEs9T_Mle0LMCWjRgiMvod9mQ/view?usp=sharing)
+
 
 ## Project Setup
 ```bash
@@ -51,12 +51,13 @@ Yoga-Pose-Detection/
 - This model learns spatial relationships between body joints regardless of absolute positions
 - The model is dependent on accurate MediaPipe landmark detection and less interpretable compared to simpler ML models like multi layer perceptrons.
 - Uses three Conv1D blocks with increasing filters (32 → 64 → 128) to hierarchically extract spatial features
-- Implements Batch Normalization after each Conv1D layer for stable training
-- ![cnn_arch](image/cnn_arch.png)
+- Implements Batch Normalization after each Conv1D layer for stable training <br><br>
+![CNN_arch](https://github.com/user-attachments/assets/e8bf1a3b-83fc-42b7-a827-09039cb2e268)
 - The accuracy curve shows steady improvement, with minor fluctuations due to aggressive dropout (0.3–0.5).
 - Loss curve indicates stable convergence, though slower than MLP due to deeper feature learning.
-- The model achives an accuracy of 73.48% in 196 epochs
-- ![cnn_arch](image/cnn.png)
+- The model achives an accuracy of 73.48% in 196 epochs <br><br>
+![CNN](https://github.com/user-attachments/assets/7b9897b0-e44d-426c-bfb9-a97fd0211dbe)
+
 
 ## MLP Model
 - The model accepts input shape (33 landmarks × 3 coordinates + 8 angles = 107 features) and outputs probabilities for all 107 yoga poses via softmax activation
@@ -67,9 +68,9 @@ Yoga-Pose-Detection/
 - Avoids abrupt dimensionality reduction, preserving critical pose information.
 - Batch Normalization after each dense layer stabilizes training.
 - Dropout (0.3) mitigates overfitting by randomly deactivating neurons.
-- Activation function ReLU for hidden layers (efficient gradient flow) and softmax for multi-class output (107 poses).
-- image[mlp_arch.png]
+- Activation function ReLU for hidden layers (efficient gradient flow) and softmax for multi-class output (107 poses). <br><br>
+![MLP](https://github.com/user-attachments/assets/72994757-3914-487c-9138-4f08ad633662)
 - Accuracy plateaued earlier (by epoch 40), suggesting efficient feature extraction from preprocessed landmarks.
 - Loss dropped sharply in initial epochs but stabilized quickly, indicating the model learned key patterns early.
-- The model achives an accuracy of 71.46% in just 65 epochs.
-- image[mlp_accuracy.png]
+- The model achives an accuracy of 71.46% in just 65 epochs. <br><br>
+![MLP_arch](https://github.com/user-attachments/assets/9b041f36-39bf-4915-8724-818e92e9451f)
