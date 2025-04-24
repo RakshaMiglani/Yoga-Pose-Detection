@@ -19,16 +19,16 @@ To make the system accessible, a Streamlit-based web application is developed, o
 - Model Performance Dashboard: Displays accuracy, confusion matrices, and other metrics.
 
 ## Preview
-
+![pose](https://github.com/user-attachments/assets/4a8c3dcc-d55f-41d6-9b99-7e7643c4e12f)
+![Screenshot 2025-04-24 151010](https://github.com/user-attachments/assets/bff1c9e7-5211-40ea-a40e-fc8d4edfe024)
 
 ## Project Setup
 ```bash
 Yoga-Pose-Detection/
-│── Models
-     |── model_cnn.h5
-     |── scalar_cnn.pkl
-     |── model_mlp.h5
-     |── scalar_mlp.pkl 
+|── model_cnn.h5
+|── scalar_cnn.pkl
+|── model_mlp.h5
+|── scalar_mlp.pkl 
 │── Exploration.ipynb
 |── Preprocessing.ipynb
 |── CNN.ipynb
@@ -41,7 +41,28 @@ Yoga-Pose-Detection/
 
 ## Installation and setup
 
-## Dataset
+The website can be run by following the steps
+```bash
+# Clone the github repository
+git clone  https://github.com/RakshaMiglani/Yoga-Pose-Detection
+cd Yoga-Pose-Detection
+
+# Create virtual environment named 'myenv'
+python -m venv myenv
+pip3 install requirements.txt
+
+# Change execution policy (only needed once on Windows)
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+# Activate the virtual environment
+.\myenv\Scripts\Activate.ps1
+streamlit run app.py
+```
+
+- Preprocessing.ipynb consits of the code used to convert images into normalized mediapipe keypoints saved in yoga_keypoints_with_angles.csv
+- Exploration.ipynb contains the code used to check the nature of images in the dataset
+- CNN.ipynb contains the code used to train the cnn model
+- MLP.ipynb contains the code used to train the mlp model
 
 
 ## 1D CNN Model
